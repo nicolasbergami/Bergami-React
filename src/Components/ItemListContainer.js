@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import banner1 from '../img/bici banner 1.jpg';
 import banner2 from '../img/bici banner 2.jpg';
 import banner3 from '../img/bici banner 3.png';
-import styles from '../Components/components.css';
+import  '../Components/components.css';
 
 
 export function ItemListContainer(){
