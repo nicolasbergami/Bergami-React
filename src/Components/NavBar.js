@@ -3,15 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {
-  MDBNavbar,
-  MDBContainer,
-  MDBIcon,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBBadge
-} from 'mdb-react-ui-kit';
+import CartWidget from "./CartWidget";
 export function NavBar(){
 
 return (
@@ -23,12 +15,7 @@ return (
         <Nav className="justify-content-center">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
-          <Nav.Link href="#link"> 
-          <MDBBadge pill color='danger'>!</MDBBadge>
-              <span>
-                <MDBIcon fas icon='shopping-cart'></MDBIcon>
-              </span> 🛒</Nav.Link>
-          
+          <CartWidget/>
         </Nav>
       </Navbar.Collapse>
     </Container>
