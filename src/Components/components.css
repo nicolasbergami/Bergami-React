@@ -18,3 +18,24 @@ height: 35rem;
 .CAPTION_CARROUSEL{
     color: black;
 }
+.product-card {
+display: flexbox;
+text-align: center;
+}
+.productos-flex{
+    display: flex;
+    padding: 20px;
+}
+.img-producto{
+    width: 20rem;
+}
+.productos-h2
+{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 20px;
+    text-decoration: underline 2px black;
+}
+.btnAddCart{
+    margin-top: 1rem;
+}

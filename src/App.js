@@ -1,7 +1,7 @@
 
 import './App.css';
 import { NavBar } from './Components/NavBar';
-import { ItemListContainer } from './Components/ItemListContainer';
+import  ItemListContainer  from './Components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   <div>
     <NavBar/>
     <div>
-    <ItemListContainer/>
+    <ItemListContainer productos={{nombre: 'Bicicleta XRT 2022',img:"https://www.pngmart.com/files/6/Bicycle-PNG-Background-Image.png",categoria:'mountain bike',precio:'75.000'}}/>
     </div>
     
   </div>
