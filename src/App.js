@@ -9,7 +9,7 @@ function App() {
   <div>
     <NavBar/>
     <div>
-    <ItemListContainer productos={{nombre: 'Bicicleta XRT 2022',img:"https://www.pngmart.com/files/6/Bicycle-PNG-Background-Image.png",categoria:'mountain bike',precio:'75.000'}}/>
+    <ItemListContainer />
     </div>
     
   </div>

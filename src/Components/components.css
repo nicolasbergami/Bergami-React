@@ -28,6 +28,7 @@ text-align: center;
 }
 .img-producto{
     width: 20rem;
+    height: 12rem;
 }
 .productos-h2
 {
@@ -38,4 +39,14 @@ text-align: center;
 }
 .btnAddCart{
     margin-top: 1rem;
+}
+.card{
+    margin: 5rem;
+    width: 23rem;
+}
+.container-cards{
+    display: flex;
+}
+.card-body{
+    text-align: center;
 }

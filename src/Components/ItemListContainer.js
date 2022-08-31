@@ -4,12 +4,28 @@ import banner1 from '../img/bici banner 1.jpg';
 import banner2 from '../img/bici banner 2.jpg';
 import banner3 from '../img/bici banner 3.png';
 import '../Components/components.css';
-import Contador from "./Contador";
+import { useEffect,useState } from "react";
+import { pedirDatos } from "../helpers/pedirDatos"
+import ItemList from "./ItemList";
 
 
 
-const ItemListContainer = ({ productos }) => {
+const ItemListContainer = () => {
 
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        pedirDatos()
+            .then( (res) => {
+                setProductos(res)
+            })
+            .catch( (error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                // console.log("Fin del proceso")
+            })
+    }, [])
   return (
     <div>
       <Carousel>
@@ -55,28 +71,9 @@ const ItemListContainer = ({ productos }) => {
       <h2 className="productos-h2">Nuestros Productos</h2>
       <div className="productos-flex container">
         
-        <div className="product-card container">
-          <img src={productos.img} className="img-producto" />
-          <h4>{productos.nombre}</h4>
-          <p>Precio: ${productos.precio}</p>
-          <p>Categoria: {productos.categoria}</p>
-          <Contador/>
-        </div>
-        <div className="product-card container">
-          <img src={productos.img} className="img-producto" />
-          <h4>{productos.nombre}</h4>
-          <p>Precio: ${productos.precio}</p>
-          <p>Categoria: {productos.categoria}</p>
-          <Contador/>
-        </div>
+  
+        <ItemList productos={productos}/>
         
-        <div className="product-card container">
-          <img src={productos.img} className="img-producto" />
-          <h4>{productos.nombre}</h4>
-          <p>Precio: ${productos.precio}</p>
-          <p>Categoria: {productos.categoria}</p>
-          <Contador/>
-        </div>
         
         
 
