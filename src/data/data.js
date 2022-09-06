@@ -3,7 +3,7 @@ export const stock = [
         id: 1,
         nombre: 'Bicicleta XRT 2022',
         precio: 90000,
-        img: 'https://assets.stickpng.com/images/5aed97f0208cc94b7bff8de5.png',
+        img: 'https://www.pngall.com/wp-content/uploads/5/Black-Mountain-Bike-PNG.png',
         stock: 50,
         desc: 'Ideal para Profesionales',
         categoria:'Mountain Bike'

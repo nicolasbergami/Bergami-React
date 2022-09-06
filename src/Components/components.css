@@ -50,3 +50,16 @@ text-align: center;
 .card-body{
     text-align: center;
 }
+.img-detail{
+    width: 40rem;
+    height: 30rem;
+    margin-right: 8rem;
+}
+.container-details{
+    display: flex;
+    margin-top: 7rem;
+   
+}
+.description{
+    padding-top: 5rem;
+}
