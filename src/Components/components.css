@@ -63,3 +63,18 @@ text-align: center;
 .description{
     padding-top: 5rem;
 }
+.logo{
+    width:3rem;
+    margin-right: 1rem;
+}
+.categorias{
+    display: flex;
+    color: black;
+    font-family: Impact, Haettenschweiler,  sans-serif;
+    font-size: 1.1rem;
+    margin: 1rem;
+    text-decoration: none;
+}
+.productos-flex{
+    margin-top: -15rem;
+}

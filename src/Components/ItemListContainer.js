@@ -4,28 +4,42 @@ import banner1 from '../img/bici banner 1.jpg';
 import banner2 from '../img/bici banner 2.jpg';
 import banner3 from '../img/bici banner 3.png';
 import '../Components/components.css';
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { pedirDatos } from "../helpers/pedirDatos"
 import ItemList from "./ItemList";
+import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
 
 
 const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState([])
 
-    useEffect(() => {
-        pedirDatos()
-            .then( (res) => {
-                setProductos(res)
-            })
-            .catch( (error) => {
-                console.log(error)
-            })
-            .finally(() => {
-                // console.log("Fin del proceso")
-            })
-    }, [])
+  const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const { categoryId } = useParams()
+
+
+  useEffect(() => {
+    setLoading(true)
+
+    pedirDatos()
+      .then((res) => {
+        if (!categoryId) {
+          setProductos(res)
+        } else {
+          setProductos(res.filter((prod) => prod.category === categoryId))
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [categoryId])
+
   return (
     <div>
       <Carousel>
@@ -68,26 +82,41 @@ const ItemListContainer = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <h2 className="productos-h2">Nuestros Productos</h2>
-      <div className="productos-flex container">
-        
-  
-        <ItemList productos={productos}/>
-        
-        
-        
+      <div>
+        <h2 className="productos-h2">Nuestros Productos</h2>
+        <div>
+          <h3>Categorias</h3>
+          <div>
+            <Link to='/productos/Mountain' className="categorias">Mountain </Link>
+            <Link to='/productos/Racing' className="categorias">Racing</Link>
+            <Link to='/productos/Sport' className="categorias">Gorros</Link>
 
+          </div>
+        </div>
+        <div>
+
+        {
+          loading
+            ? <h2>Cargando...</h2>
+            :
+
+            <div className="productos-flex container">
+
+
+              <ItemList productos={productos} />
+
+
+
+
+            </div>
+        }
+        </div>
       </div>
-    </div>
+      </div>
 
-  )
+      )
 }
-export default ItemListContainer;
-
-
-
-
-
+      export default ItemListContainer;
 
 
 
