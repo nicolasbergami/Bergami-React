@@ -89,7 +89,7 @@ const ItemListContainer = () => {
           <div>
             <Link to='/productos/Mountain' className="categorias">Mountain </Link>
             <Link to='/productos/Racing' className="categorias">Racing</Link>
-            <Link to='/productos/Sport' className="categorias">Gorros</Link>
+           S
 
           </div>
         </div>
