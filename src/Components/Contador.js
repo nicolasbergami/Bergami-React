@@ -1,25 +1,24 @@
 import { useState } from "react";
-const Contador = () => {
+import { stock } from "../data/data";
+
+const Contador = ({max,counter,setCounter,handleAgregar}) => {
     //let counter = 1;
-    const [counter, SetCounter] = useState(0)
     const [AddCart, SetAddCart] = useState(true)
+   
 
 
     const handleSuma = () => {
-        SetCounter(counter + 1)
+        
+        if (counter<max)
+        setCounter(counter + 1)
     }
 
     const handleResta = () => {
         if (counter > 0) {
-            SetCounter(counter - 1)
+            setCounter(counter - 1)
         }
     }
-    const handleAddCart = () => {
-        if(counter>0){
-        SetAddCart()
-        SetCounter(0)
-        }
-    }
+   
     return (
         <div className="botton-producto">
 
@@ -28,7 +27,7 @@ const Contador = () => {
             <span className="mx-2">{counter}</span>
             <button onClick={handleSuma} className="btn btn-primary">+</button>
             <div>
-                <button onClick={handleAddCart} className="btn btn-warning btnAddCart">{AddCart ? "Agregar al Carrito" : "Se agrego al Carrito "}</button>
+                <button onClick={handleAgregar} className="btn btn-warning btnAddCart" >Agregar al carrito</button>
             </div>
         </div>
 

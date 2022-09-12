@@ -16,7 +16,7 @@ export const stock = [
         img: 'https://assets.stickpng.com/images/5aed97da208cc94b7bff8de2.png',
         stock: 50,
         desc: '',
-        category:'Racing '
+        category:'Racing' 
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ export const stock = [
         img: 'https://www.pngmart.com/files/6/Bicycle-Transparent-Background.png',
         stock: 50,
         desc: '',
-        category:'Mountain '
+        category:'Mountain'
     },
 
 ]
