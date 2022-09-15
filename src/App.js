@@ -7,9 +7,11 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import Cart from './Components/Cart';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
 
       <NavBar />
@@ -23,6 +25,7 @@ function App() {
       </Routes>
 
     </BrowserRouter>
+    </CartProvider>
 
   );
 }
