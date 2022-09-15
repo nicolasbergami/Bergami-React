@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Components/ItemDetailContainer';
+import Cart from './Components/Cart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/item/:itemId' element={<ItemDetailContainer />} />
         <Route path='/productos/:categoryId' element={<ItemListContainer/>} />
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='*' element={<Navigate to="/" />} />
       </Routes>
 

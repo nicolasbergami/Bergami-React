@@ -1,11 +1,13 @@
 import { useState } from "react"
 import '../Components/components.css'
 import Contador from './Contador'
-import Select from "./Select";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
     const [cantidad, setCantidad] = useState(1)
+    const { cart, addToCart, isInCart } = useCartContext()
 
     const handleAgregar = () => {
         const itemToCart = {
@@ -13,26 +15,36 @@ const ItemDetail = ({item}) => {
             precio: item.precio,
             nombre: item.nombre,
             cantidad
-            
+
         }
-        console.log(itemToCart)
+
+        addToCart(itemToCart)
     }
     return (
-        <div className="container container-details">
-            <img src={item.img} className="img-detail"/>
-            <div className='description'>
-            <h3>{item.nombre} </h3>
-            <p>Descripcion: {item.desc}</p>
-            <p>Categoria: {item.categoria}</p>
-            <h4>Precio: ${item.precio}</h4>
-            <Contador 
-             max={item.stock}
-             counter={cantidad}
-             setCounter={setCantidad}
-             handleAgregar={handleAgregar}/>
-            </div>
+        <div className="container my-5">
+            <img src={item.img}/>
+            <h3>{item.nombre}</h3>
+            <p>{item.desc}</p>
+            <p>{item.category}</p>
+            <h4>{item.precio}</h4>
+            <hr/>
+           
+
+            
+            {
+                isInCart(item.id)
+                ?   <Link to="/cart" className="btn btn-success my-2">Terminar mi compra</Link>
+                :   <Contador
+                        max={item.stock}
+                        counter={cantidad}
+                        setCounter={setCantidad}
+                        handleAgregar={handleAgregar}
+                    />
+            }
+
+
+
         </div>
     )
-}
-
-export default ItemDetail
+ }
+  export default ItemDetail
