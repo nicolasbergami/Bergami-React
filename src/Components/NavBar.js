@@ -6,31 +6,31 @@ import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import '../Components/components.css';
 
-export function NavBar(){
+export function NavBar() {
 
-return (
+  return (
     <Navbar bg="light" expand="lg">
-    <Container>
-      <Navbar.Brand >
-        <Link to="/">
-          <img src="https://cdn.pixabay.com/photo/2012/04/24/18/13/bicycle-40756_960_720.png" className="logo"/>
-          
-        </Link>
-        BiciMundo
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav " className="justify-content-end">
-        <Nav className="justify-content-center">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
-          <CartWidget/>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+      <Container>
+        <Navbar.Brand >
+          <Link to="/">
+            <img src="https://cdn.pixabay.com/photo/2012/04/24/18/13/bicycle-40756_960_720.png" className="logo" />
 
-)
+          </Link>
+          BiciMundo
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav " className="justify-content-end">
+          <Nav className="justify-content-center">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
+            <CartWidget />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+  )
 
 
-} 
+}
 

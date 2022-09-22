@@ -2,10 +2,7 @@ import { useState } from "react";
 import { stock } from "../data/data";
 
 const Contador = ({max,counter,setCounter,handleAgregar}) => {
-    //let counter = 1;
-  
    
-
 
     const handleSuma = () => {
         

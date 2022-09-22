@@ -9,6 +9,8 @@ import { pedirDatos } from "../helpers/pedirDatos"
 import ItemList from "./ItemList";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom'
+import { collection, getDocs,query, where } from "firebase/firestore"
+import { db } from '../firebase/config'
 
 
 
@@ -23,21 +25,24 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true)
+    //1-armar referencia (sync)
+    const productosRef = collection(db, 'productos')
+    //2- consumir esa referencia (async)
+    const q = categoryId
+      ? query(productosRef, where('category', '==', categoryId))
+      : productosRef
 
-    pedirDatos()
-      .then((res) => {
-        if (!categoryId) {
-          setProductos(res)
-        } else {
-          setProductos(res.filter((prod) => prod.category === categoryId))
-        }
-      })
-      .catch((error) => {
-        console.log(error)
+    getDocs(q)
+      .then((resp) => {
+        const productosDB = resp.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        console.log(productosDB)
+
+        setProductos(productosDB)
       })
       .finally(() => {
         setLoading(false)
       })
+
   }, [categoryId])
 
   return (
@@ -89,34 +94,34 @@ const ItemListContainer = () => {
           <div>
             <Link to='/productos/Mountain' className="categorias">Mountain </Link>
             <Link to='/productos/Racing' className="categorias">Racing</Link>
-           
+
 
           </div>
         </div>
         <div>
 
-        {
-          loading
-            ? <h2>Cargando...</h2>
-            :
+          {
+            loading
+              ? <h2>Cargando...</h2>
+              :
 
-            <div className="productos-flex container">
-
-
-              <ItemList productos={productos} />
+              <div className="productos-flex container">
 
 
+                <ItemList productos={productos} />
 
 
-            </div>
-        }
+
+
+              </div>
+          }
         </div>
       </div>
-      </div>
+    </div>
 
-      )
+  )
 }
-      export default ItemListContainer;
+export default ItemListContainer;
 
 
 
