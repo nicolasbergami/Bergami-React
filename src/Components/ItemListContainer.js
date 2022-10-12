@@ -89,11 +89,13 @@ const ItemListContainer = () => {
       </Carousel>
       <div>
         <h2 className="productos-h2">Nuestros Productos</h2>
-        <div>
+        <div className="category">
           <h3>Categorias</h3>
           <div>
+          <Link to='/productos' className="categorias">Todas </Link>
             <Link to='/productos/Mountain' className="categorias">Mountain </Link>
             <Link to='/productos/Racing' className="categorias">Racing</Link>
+            <Link to='/productos/Professional' className="categorias">Professional</Link>
 
 
           </div>

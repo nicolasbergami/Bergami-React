@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
         </Card.Text>
         <Link to={`/item/${producto.id}`} className="btn btn-primary " >Ver Más</Link>
     
-        <Contador/>
+        
       </Card.Body>
     </Card>
     

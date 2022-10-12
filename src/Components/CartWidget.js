@@ -11,7 +11,7 @@ const CartWidget = () => {
 
   const { cartQuantity } = useContext(CartContext)
   return (
-    <Link to="/cart">
+    <Link to="/cart" className="cart">
       <BsFillCartCheckFill />
       <span>{cartQuantity()}</span>
     </Link>

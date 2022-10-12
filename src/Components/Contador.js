@@ -19,7 +19,7 @@ const Contador = ({max,counter,setCounter,handleAgregar}) => {
     return (
         <div className="botton-producto">
 
-            <hr />
+            
             <button onClick={handleResta} className="btn btn-outline-danger">-</button>
             <span className="mx-2">{counter}</span>
             <button onClick={handleSuma} className="btn btn-primary">+</button>

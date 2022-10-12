@@ -21,8 +21,8 @@ export function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav " className="justify-content-end">
           <Nav className="justify-content-center">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
+              <Link className="navbar" to='/' >Home </Link>
+              <Link className="navbar" to='/Contacto' >Contacto </Link>
             <CartWidget />
           </Nav>
         </Navbar.Collapse>
