@@ -11,6 +11,7 @@ const ItemDetail = ({ item }) => {
 
     const handleAgregar = () => {
         const itemToCart = {
+            img:item.img,
             id: item.id,
             precio: item.precio,
             nombre: item.nombre,

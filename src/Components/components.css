@@ -149,3 +149,24 @@ input:hover{
 .div-form{
     padding-bottom: 20px;
 }
+.cart-products{
+    display: flex;
+    margin-left: 4rem;
+}
+.collection-cart{
+    margin-top: 2.5rem;
+    padding-left: 3rem;
+    display: flex;
+}
+.remove-btn{
+    height: 2.5rem;
+}
+.separar{
+    padding-left: 3rem;
+}
+.proced-checkout{
+    margin-left: 55rem;
+}
+.cart-img{
+    width: 15rem;
+}
